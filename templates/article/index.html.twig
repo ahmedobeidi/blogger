@@ -2,6 +2,11 @@
 
 {% block title %}Hello ArticleController!{% endblock %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/header.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/articles_page.css') }}">
+{% endblock %}
+
 {% block body %}
 <body>
     <header class="header">
@@ -11,16 +16,100 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="{{ path('app_home') }}" class="active">Home</a></li>
-                    <li><a href="{{ path('app_articles') }}">Articles</a></li>
+                    <li><a href="{{ path('app_home') }}">Home</a></li>
+                    <li><a href="{{ path('app_articles') }}" class="active">Articles</a></li>
                     <li><a href="">Login</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
+
     <main>
-    
+        <section id="articles_page_title">
+            <h1>Articles</h1>
+        </section>
+
+        <section id="articles_section">
+            <div id="articles_container">
+                <div class="article">
+                    <div class="article_image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="article_title">
+                        <h2>Title</h2>
+                    </div>
+                    <div class="article_data">
+                        <p>Username</p>
+                        <p>Date</p>
+                        <p>Category</p>
+                    </div>
+                    <div class="article_content">
+                        <p>Content</p>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="article_image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="article_title">
+                        <h2>Title</h2>
+                    </div>
+                    <div class="article_data">
+                        <p>Username</p>
+                        <p>Date</p>
+                        <p>Category</p>
+                    </div>
+                    <div class="article_content">
+                        <p>Content</p>
+                    </div>
+                </div><div class="article">
+                    <div class="article_image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="article_title">
+                        <h2>Title</h2>
+                    </div>
+                    <div class="article_data">
+                        <p>Username</p>
+                        <p>Date</p>
+                        <p>Category</p>
+                    </div>
+                    <div class="article_content">
+                        <p>Content</p>
+                    </div>
+                </div><div class="article">
+                    <div class="article_image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="article_title">
+                        <h2>Title</h2>
+                    </div>
+                    <div class="article_data">
+                        <p>Username</p>
+                        <p>Date</p>
+                        <p>Category</p>
+                    </div>
+                    <div class="article_content">
+                        <p>Content</p>
+                    </div>
+                </div><div class="article">
+                    <div class="article_image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="article_title">
+                        <h2>Title</h2>
+                    </div>
+                    <div class="article_data">
+                        <p>Username</p>
+                        <p>Date</p>
+                        <p>Category</p>
+                    </div>
+                    <div class="article_content">
+                        <p>Content</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 {% endblock %}
