@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blogger{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/home_page.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <header class="header">
+        <div>
+            <div class="logoDiv">
+                <a href="{{ path('app_home') }}">BLOGGER</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('app_home') }}" class="active">Home</a></li>
+                    <li><a href="{{ path('app_articles') }}">Articles</a></li>
+                    <li><a href="">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <h1>Hello! This is Blogger</h1>
+                <p>Blog HTML CSS Symfony</p>
+                <a href="{{ path('app_articles') }}">DISCOVER MORE</a>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}
