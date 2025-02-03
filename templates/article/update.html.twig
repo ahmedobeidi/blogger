@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Article
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/create_article_page.css') }}">
+{% endblock %}
+
+{% block body %}
+	<body>
+		<header class="header">
+			<div>
+				<div class="logoDiv">
+					<a href="{{ path('app_home') }}">BLOGGER</a>
+				</div>
+				<nav>
+					<ul>
+						<li><ahref="{{ path('app_home') }}">Home</a></li>
+						<li><ahref="{{ path('app_articles') }}">Articles</a></li>
+						<li><a href="">Login</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section id="articles_page_title">
+				<h1>Edit Article</h1>
+			</section>
+
+			<section class="form_container">
+				<div class="form">
+					{{ form_start(form) }}
+					<div class="form-group">
+						{{ form_label(form.title, null, {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_widget(form.title, {'attr': {'class': 'form-input'}}) }}
+                        {{ form_errors(form.title) }}
+					</div>
+					<div class="form-group">
+						{{ form_label(form.content, null, {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_widget(form.content, {'attr': {'class': 'form-input'}}) }}
+						{{ form_errors(form.content) }}
+					</div>
+					<div class="form-group">
+						{{ form_label(form.image, null, {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_widget(form.image, {'attr': {'class': 'form-input'}}) }}
+						{{ form_errors(form.image) }}
+					</div>
+					<div class="form-group">
+						{{ form_label(form.category, null, {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_widget(form.category, {'attr': {'class': 'form-input'}}) }}
+						{{ form_errors(form.category) }}
+					</div>
+					<div class="form-group">
+						{{ form_widget(form.save) }}
+					</div>
+					{{ form_end(form) }}
+				</div>
+			</section>
+		</main>
+	</body>
+{% endblock %}

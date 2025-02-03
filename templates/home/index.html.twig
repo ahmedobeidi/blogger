@@ -3,8 +3,7 @@
 {% block title %}Blogger{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('styles/header.css') }}">
-<link rel="stylesheet" href="{{ asset('styles/home_page.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/home_page.css') }}" >
 {% endblock %}
 
 {% block body %}
@@ -29,7 +28,7 @@
             <div>
                 <h1>Hello! This is Blogger</h1>
                 <p>Blog HTML CSS Symfony</p>
-                <a href="{{ path('app_articles') }}">DISCOVER MORE</a>
+                <a href="{{ path('app_articles') }}" >DISCOVER MORE</a>
             </div>
         </section>
     </main>

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block stylesheets %}
+
+<link rel="stylesheet" href="{{ asset('styles/articles_page.css') }}" data-turbo-track="reload">
+{% endblock %}
+
+{% block body %}
+<body>
+    <header class="header">
+        <div>
+            <div class="logoDiv">
+                <a href="{{ path('app_home') }}">BLOGGER</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('app_home') }}">Home</a></li>
+                    <li><a href="{{ path('app_articles') }}" class="active">Articles</a></li>
+                    <li><a href="">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="articles_page_title">
+            <h1>Articles</h1>
+        </section>
+
+        <section id="articles_section">
+            <div id="articles_container">
+                {% for article in articles %}
+                    <div class="article">
+                        <div class="article_title">
+                            <a href="{{ path('app_article', {'id': article.id}) }}">{{ article.title }}</a>
+                        </div>
+                        <div class="article_data">
+                            <p>Posted by Username on {{ article.createdAt | date("d F, Y")}} <span class="article_category_name">{{ article.category.name }}</span></p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body> 
+{% endblock %}

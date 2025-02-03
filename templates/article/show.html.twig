@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{{ article.id }}{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/article_page.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <header class="header">
+        <div>
+            <div class="logoDiv">
+                <a href="{{ path('app_home') }}">BLOGGER</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('app_home') }}">Home</a></li>
+                    <li><a href="{{ path('app_articles') }}">Articles</a></li>
+                    <li><a href="">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="articles_page_title">
+            <h1>Article {{ article.id }}</h1>
+        </section>
+
+        <section id="article_page_section">
+            <div id="articles_container">
+                {# <div id="article_image_div" style="background-image: url('/uploads/images/{{ article.image }}')" ></div> #}
+                <div class="article_image_div">
+                    <img src="/uploads/images/{{ article.image }}" alt="{{ article.title }}">
+                </div>
+                <div id="article_title">
+                    <h1>{{ article.title }}</h1>
+                </div>
+                <div id="article_data">
+                    <p>Username</p>
+                    <p>{{ article.createdAt | date("d F, Y") }}</p>
+                    <p id="article_category">{{ article.category.name }}</p>
+                </div>
+                <div id="article_content">
+                    <p>{{ article.content }}</p>
+                </div>
+                <div class="article_controle">
+                    <a href="{{ path('app_update_article', { 'id': article.id }) }}" class="edit">Edit</a>
+                    <a href="" class="delete">Delete</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}
